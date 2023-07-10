@@ -1,0 +1,8 @@
+{
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "Python":"python"
+    },
+    "code-runner.showExecutionMessage": false,
+    "code-runner.clearPreviousOutput": true
+}
