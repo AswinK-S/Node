@@ -238,5 +238,61 @@
 //         console.log('file deleted')
 // })
 
-//---------------------------------
 
+//---------------------------------routing----------------------------------\\
+
+// const http = require("http");
+
+// let routes={
+//         '/':function index(request,response){
+//                 response.writeHead(200);
+//                 response.end("NODE PAGE");
+//         },
+
+//         '/aboutus':function aboutus(request,response){
+//                 response.end("This is about page");
+//         }
+// }
+
+// http.createServer((req,res)=>{
+//         if(req.url in routes){
+//                 return routes[req.url](req,res)
+//         }
+// }).listen(8000)
+
+
+//------------------------------------------path module------------------------
+                      
+                        //-------basename()-----\\
+
+// let path = require("path")
+
+// file =path.basename('NODE/package.json');
+// console.log(file)
+
+               //-------dirname()------\\
+
+// file = path.dirname('NODE/module1.js')
+// console.log(file)               
+
+          //-----extname()---\\
+
+// file = path.extname('test.text')
+// console.log(file)
+
+          //----isAbsolute()---\\
+
+// file = path.isAbsolute('NODE/index.js')
+// console.log(file)
+
+// file = path.isAbsolute('C:/Users/aswin/OneDrive/Desktop/Brototype')
+// console.log(file)
+
+          //---------parse()------\\
+          
+// file = path.parse("NODE/module.js")
+// console.log(file)          
+
+         //------resolve()-------\\
+// file = path.resolve("index.js")
+// console.log(file)
