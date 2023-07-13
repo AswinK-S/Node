@@ -296,3 +296,39 @@
          //------resolve()-------\\
 // file = path.resolve("index.js")
 // console.log(file)
+
+
+//------------------------------------------------------------------------------------------------------------
+
+// var http=require("http")
+// var fs=require("fs")
+
+// http.createServer(function(req,res){
+// res.write("<h1> welcome </h1>")
+// res.end()
+// }).listen(3000)
+
+// fs.write("text.text","hello",function(err){
+// if(err){
+     // console.log("error")
+// }
+// })
+
+
+//--------------------------------------------------------------------------------------
+
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  // Get the data from the request.
+  const data = req.body;
+
+  // Do something with the data.
+  console.log(data);
+
+  // Send a response to the client.
+  res.write("Hello, world!");
+  res.end();
+});
+
+server.listen(3000);

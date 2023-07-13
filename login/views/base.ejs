@@ -1,0 +1,69 @@
+    <%- include('header') -%>
+
+    <div class="text-center center-div " id="login">
+        <div class="container w-25 border py-5" id="i">
+            <div class="title" pb="5">
+                <h2 class="font-weight-bold">Login System</h2>
+                <span style="font-size: medium;">Login for the existing user</span>
+                <% if(locals.logout){ %>
+                    <div class="alter alert-success text-center">
+                        <%= logout %>
+                    </div>
+                    <% } %>
+                    <% if(locals.invalid){%>
+                        <div class="alert alert-sucess text-center">
+                            <%= invalid %>
+                        </div>
+                        <%}%>
+                        <% if(locals.err){%>
+                            <div class="alert alert-danger text-center">
+                                <%= err %>
+                            </div>
+                            <%}%>
+            </div>
+            <form action="/route/login" method="POST" class="pt-3">
+                <div class="form-group">
+                    <input type="email" id="exampleInputEmail1" class="form-control" placeholder="email" name="email" onekeyup="validateEmail()">
+                    <small class="form-text  text-left" style="color: rgb(243, 243, 248)">Register email address</small>
+                    <span id="email" style="color: rgb(255, 0, 0);"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" name="password" >
+                </div>
+                <button onclick="return validateForm()" type="submit" class="btn-btn-success rounded pi">Submit</button>
+                <span id="submit-error" style="color: rgb(255, 0, 0);"></span>
+            </form>
+        </div>
+    </div>
+    <%- include('footer') -%>
+
+
+
+    <script>
+        var emailError=document.getElementById("email")
+        var submitError=document.getElementById("submit-error");
+    
+    function validateEmail(){
+        var email1 =document.getElementById("exampleInputEmail1").value;
+        if(email1.length==0){
+            emailError.innerHTML="Email is required";
+            return false;
+        }
+        if(!email1.match(/^([a-zA-Z0-9\._]+)@([a-zA-z0-9])+.([a-z]+)(.[a-z]+)?$/)){
+            emailError.innerHTML="Email is invalid";
+            return false;
+        }
+        emailError.innerHTML="";
+        return true;
+    }
+    
+    
+    function validateForm(){
+        if(!validateEmail()){
+            submitError.style.display='block';
+            submitError.innerHTML="Please enter a valid email";
+            setTimeout(function(){submitError.style.display='none';},3000);
+            return false;
+        }
+    }
+    </script>

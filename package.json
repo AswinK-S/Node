@@ -17,6 +17,7 @@
     "find-up": "^4.1.0",
     "get-caller-file": "^2.0.5",
     "get-stdin": "^8.0.0",
+    "init": "^0.1.2",
     "is-fullwidth-code-point": "^2.0.0",
     "locate-path": "^5.0.0",
     "p-limit": "^2.3.0",
